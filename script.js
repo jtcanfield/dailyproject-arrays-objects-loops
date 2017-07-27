@@ -1,7 +1,11 @@
 /*
-In this project, your task is to complete the unfinished functions. Instructions accompany each function explaining what the function should do and what value it should return. You will implement logic using loops, conditional statements, arrays, and objects to return the values specified in the instructions.
+In this project, your task is to complete the unfinished functions. Instructions accompany each function explaining
+what the function should do and what value it should return. You will implement logic using loops,
+conditional statements, arrays, and objects to return the values specified in the instructions.
 
-The `test.js` file contains tests for all of the functions in this project. Do not change any code in `test.js`. To see the output from `test.js` and to evaluate your work, open `index.html` in Chrome and view the console in the Developer Tools. You'll know that you are finding success when all of the `console.log` statements print 'true'.
+The `test.js` file contains tests for all of the functions in this project. Do not change any code in `test.js`.
+ To see the output from `test.js` and to evaluate your work, open `index.html` in Chrome and view the console in
+  the Developer Tools. You'll know that you are finding success when all of the `console.log` statements print 'true'.
 */
 
 
@@ -16,6 +20,7 @@ let numbers = [ 1, 12, 4, 18, 9, 7, 11, 3, 101, 5, 6 ];
 */
 function getFourthNum(){
     // Your answer here:
+    return numbers[3]
 }
 
 /*
@@ -24,6 +29,12 @@ function getFourthNum(){
 function smallNums(){
     let smallNums = [];
     // Your answer here:
+    for (let i = 0; i < numbers.length; i++){
+      if (numbers[i] < 10){
+        smallNums.push(numbers[i])
+      }
+    }
+    return smallNums
 }
 
 /*
@@ -31,6 +42,11 @@ function smallNums(){
 */
 function addNums(){
     // Your answer here:
+    let arrayToAdd = [12, 99, 101];
+    for (let i = 0; i < arrayToAdd.length; i++){
+      numbers.push(arrayToAdd[i])
+    }
+    return numbers
 }
 
 
@@ -54,6 +70,8 @@ let film = {
 */
 function addBoxOffice(){
     // Your answer here:
+    film.boxoffice = 269061
+    return film
 }
 
 /*
@@ -61,13 +79,17 @@ function addBoxOffice(){
 */
 function addActor(){
     // Your answer here:
+    film.actors.push("Yukiko Shimazaki")
+    return film
 }
 
 /*
-6. Now that you've added a "boxoffice" property, subtract "budget" from "property" and return the difference. This number is the amount lost by the studio in making the film. Return the loss.
+6. Now that you've added a "boxoffice" property, subtract "budget" from "property" and return the difference.
+This number is the amount lost by the studio in making the film. Return the loss.
 */
 function getLosses(){
     // Your answer here:
+    return film.boxoffice - film.budget
 }
 
 
@@ -76,7 +98,8 @@ function getLosses(){
 
 
 /*
-7. Iterate over "letterVals" and "numberVals". Concatenate the values from the two arrays and store the new values in the "vals" array. Return "vals".
+7. Iterate over "letterVals" and "numberVals". Concatenate the values from the two arrays and store the new
+alues in the "vals" array. Return "vals".
 
 Your function should return [ "v5", "x67", "r34", "f456", "p78" ];
 */
@@ -87,6 +110,10 @@ let letterVals = [ "v", "x", "r", "f", "p" ];
 function interleave(){
     let vals = [];
     // Your answer here:
+    for (let i = 0; i < numberVals.length; i++){
+      vals[i] = letterVals[i] + numberVals[i]
+    }
+    return vals
 }
 
 
@@ -95,7 +122,8 @@ function interleave(){
 
 
 /*
-8. Iterate over the "first" and "second" arrays. Compare the values for both arrays. If the arrays values are the same, then store that value in the "same" array. Return "same".
+8. Iterate over the "first" and "second" arrays. Compare the values for both arrays. If the arrays values
+are the same, then store that value in the "same" array. Return "same".
 */
 
 let first = [ "blink", "stand", "glasses", "chair", "numinous", "adjacent", "bracelet", "hand" ];
@@ -104,4 +132,10 @@ let second = [ "think", "stand", "cheese", "break", "numinous", "mouse", "close"
 function union(){
     let same = [];
     // Your answer here:
+    for (let i = 0; i < first.length; i++){
+      if (first[i] === second[i]){
+      same.push(second[i]);
+      }
+    }
+    return same
 }
